@@ -1,0 +1,39 @@
+$button-color: #3498db;
+$button-hover-color: #2980b9;
+$button-active-color: #2c3e50;
+$button-border-radius: 5px;
+$button-padding: 20px 20px;
+$button-transition-duration: 0.3s;
+$button-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+button{
+  display: inline-block;
+  padding: $button-padding;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: $button-color;
+  border-radius: $button-border-radius;
+  transition: background-color $button-transition-duration;
+  cursor: pointer;
+  box-shadow: $button-box-shadow;
+  border: none;
+  width: 55px;
+
+  &:hover {
+    background-color: $button-hover-color;
+  }
+
+  &:active {
+    background-color: $button-active-color;
+    transform: translateY(2px);
+    box-shadow: none;
+  }
+}
+@media only screen and (max-width: 600px){
+  button{
+    width: 45px;
+  }
+}

@@ -1,0 +1,55 @@
+$switch-width: 60px;
+$switch-height: 30px;
+$switch-background: #bdc3c7;
+$switch-thumb-size: 26px;
+$switch-thumb-color: #ecf0f1;
+$switch-transition-duration: 0.3s;
+$switch-color:#3498db;
+
+.switch-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .switch {
+    position: relative;
+    width: $switch-width;
+    height: $switch-height;
+    background-color: $switch-background;
+    border-radius: calc($switch-height / 2);
+    cursor: pointer;
+    transition: background-color $switch-transition-duration;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: $switch-thumb-size;
+      height: $switch-thumb-size;
+      background-color: $switch-thumb-color;
+      border-radius: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform $switch-transition-duration;
+      margin-left: 16.5px;
+    }
+
+    &.active {
+      background-color: $switch-color;
+
+      &::before {
+        transform: translate(#{percentage(calc(($switch-width - $switch-thumb-size) / $switch-width))}, -50%);
+      }
+    }
+
+    &:hover {
+      background-color: darken($switch-background, 10%);
+    }
+
+    &:active {
+      background-color: darken($switch-background, 20%);
+    }
+  }
+  .bank-selector{
+    background-color: $switch-color;
+  }
+}
